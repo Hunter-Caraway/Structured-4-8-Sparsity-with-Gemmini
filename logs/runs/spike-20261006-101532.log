@@ -1,0 +1,30 @@
+Gemmini extension configured with:
+    dim = 16
+A_transpose: 0, B_transpose: 0, dataflow: 0
+Output-stationary
+A_transpose: 0, B_transpose: 0, dataflow: 1
+Weight-stationary
+A_transpose: 0, B_transpose: 1, dataflow: 0
+Output-stationary
+A_transpose: 0, B_transpose: 1, dataflow: 1
+Weight-stationary
+A_transpose: 1, B_transpose: 0, dataflow: 0
+Output-stationary
+A_transpose: 1, B_transpose: 0, dataflow: 1
+Weight-stationary
+A_transpose: 1, B_transpose: 1, dataflow: 0
+Output-stationary
+A_transpose: 1, B_transpose: 1, dataflow: 1
+Weight-stationary
+Gemmini extension configured with:
+    dim = 16
+2:4 ok (k=64 squashed to 32 rows)
+4:8 ok (k=64 squashed to 32 rows)
+1:2 ok (k=64 squashed to 32 rows)
+nm_sparse_sw passed
+nm_sparse_matmul: 2:4, i=32 k=64 j=32
+dense  cycles: 341 (16 preload/compute pairs)
+sparse cycles: 498 (8 preload/compute pairs, 4 meta cmds each)
+nm_sparse_matmul passed
+Gemmini extension configured with:
+    dim = 16
