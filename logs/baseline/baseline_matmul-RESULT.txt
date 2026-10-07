@@ -1,0 +1,8 @@
+# stock GemminiRocketConfig, matmul-baremetal, run-binary (TIMEOUT_CYCLES=150000000)
+# built from unmodified gemmini scala (sparse-nm rtl changes stashed during the build)
+# date: Tue Oct  6 02:35:51 AM EDT 2026
+# wall time: 104m33s
+*** PASSED *** Completed after             28599226 simulation cycles
+# last core trace line (core cycle counter):
+C0:   12831398 [1] pc=[00000000800033a4] W[r 0=0000000080003
+# full instruction trace (1.2GB, not copied): /home/hunter/chipyard/sims/verilator/output/chipyard.harness.TestHarness.GemminiRocketConfig/matmul-baremetal.out
