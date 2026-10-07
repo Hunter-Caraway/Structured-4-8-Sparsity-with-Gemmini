@@ -1,0 +1,112 @@
+INFO:root:Preparing transaction: ...working... done
+INFO:root:Verifying transaction: ...working... done
+WARNING:root:WARNING conda.conda_pypi.main:notify_conda_pypi_tip(158):
+WARNING:root:  Did you know? You can install many PyPI packages with conda
+WARNING:root:  using conda-pypi. Get started:
+WARNING:root:    https://bit.ly/4xXYt0B
+ERROR:root:
+INFO:root:Executing transaction: ...working...
+INFO:root:
+INFO:root:
+INFO:root:done
+INFO:root:Collecting invoke @ https://files.pythonhosted.org/packages/5a/de/bbc12563bbf979618d17625a4e753ff7a078523e28d870d3626daa97261a/invoke-3.0.3-py3-none-any.whl#sha256=f11327165e5cbb89b2ad1d88d3292b5113332c43b8553b494da435d6ec6f5053 (from -r /tmp/conda-lock-qt_o3_uj (line 1))
+INFO:root:  Downloading invoke-3.0.3-py3-none-any.whl (160 kB)
+INFO:root:Collecting mock @ https://files.pythonhosted.org/packages/bd/d9/617e6af809bf3a1d468e0d58c3997b1dc219a9a9202e650d30c2fc85d481/mock-5.2.0-py3-none-any.whl#sha256=7ba87f72ca0e915175596069dbbcc7c75af7b5e9b9bc107ad6349ede0819982f (from -r /tmp/conda-lock-qt_o3_uj (line 3))
+INFO:root:  Downloading mock-5.2.0-py3-none-any.whl (31 kB)
+INFO:root:Collecting numpy @ https://files.pythonhosted.org/packages/4b/d7/ecf66c1cd12dc28b4040b15ab4d17b773b87fa9d29ca16125de01adb36cd/numpy-1.26.4-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl#sha256=ffa75af20b44f8dba823498024771d5ac50620e6915abac414251bd971b4529f (from -r /tmp/conda-lock-qt_o3_uj (line 5))
+INFO:root:  Downloading numpy-1.26.4-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (18.2 MB)
+INFO:root:[?25l     [38;5;237m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m0.0/18.2 MB[0m [31m?[0m eta [36m-:--:--[0m
+INFO:root:[2K     [38;2;249;38;114m━━━━━━━━━━━━━━[0m[38;2;249;38;114m╸[0m[38;5;237m━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m6.8/18.2 MB[0m [31m38.3 MB/s[0m eta [36m0:00:01[0m
+INFO:root:[2K     [38;2;249;38;114m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m[38;5;237m╺[0m[38;5;237m━━━━[0m [32m16.0/18.2 MB[0m [31m42.0 MB/s[0m eta [36m0:00:01[0m
+INFO:root:[2K     [38;2;114;156;31m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m18.2/18.2 MB[0m [31m40.0 MB/s[0m  [33m0:00:00[0m
+INFO:root:[?25hCollecting asttokens @ https://files.pythonhosted.org/packages/45/86/4736ac618d82a20d87d2f92ae19441ebc7ac9e7a581d7e58bbe79233b24a/asttokens-2.4.1-py2.py3-none-any.whl#sha256=051ed49c3dcae8913ea7cd08e46a606dba30b79993209636c4875bc1d637bc24 (from -r /tmp/conda-lock-qt_o3_uj (line 7))
+INFO:root:  Downloading asttokens-2.4.1-py2.py3-none-any.whl (27 kB)
+INFO:root:Collecting bcrypt @ https://files.pythonhosted.org/packages/86/1b/f4d7425dfc6cd0e405b48ee484df6d80fb39e05f25963dbfcc2c511e8341/bcrypt-3.2.2-cp36-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.manylinux_2_24_x86_64.whl#sha256=6d2cb9d969bfca5bc08e45864137276e4c3d3d7de2b162171def3d188bf9d34a (from -r /tmp/conda-lock-qt_o3_uj (line 9))
+INFO:root:  Downloading bcrypt-3.2.2-cp36-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.manylinux_2_24_x86_64.whl (62 kB)
+INFO:root:Collecting gdspy @ https://files.pythonhosted.org/packages/1d/e4/97b8add92fbec2a9890ad4777272e9a9e4d7a0ceeac42b7e1febe94f0e86/gdspy-1.4.zip#sha256=0ce8a159d253399ba5092692548b5b6990cbf3d1febd9117f79400cb7a5426df (from -r /tmp/conda-lock-qt_o3_uj (line 11))
+INFO:root:  Downloading gdspy-1.4.zip (7.6 MB)
+INFO:root:[?25l     [38;5;237m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m0.0/7.6 MB[0m [31m?[0m eta [36m-:--:--[0m
+INFO:root:[2K     [38;2;249;38;114m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m[38;2;249;38;114m╸[0m [32m7.6/7.6 MB[0m [31m38.3 MB/s[0m eta [36m0:00:01[0m
+INFO:root:[2K     [38;2;114;156;31m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m7.6/7.6 MB[0m [31m35.0 MB/s[0m  [33m0:00:00[0m
+INFO:root:[?25h  Installing build dependencies: started
+INFO:root:  Installing build dependencies: finished with status 'done'
+INFO:root:  Getting requirements to build wheel: started
+INFO:root:  Getting requirements to build wheel: finished with status 'done'
+INFO:root:  Preparing metadata (pyproject.toml): started
+INFO:root:  Preparing metadata (pyproject.toml): finished with status 'done'
+INFO:root:Collecting pynacl @ https://files.pythonhosted.org/packages/3e/d0/f301f83ac8dbe53442c5a43f6a39016f94f754d7a9815a875b65e218a307/pynacl-1.6.2-cp38-abi3-manylinux_2_26_x86_64.manylinux_2_28_x86_64.whl#sha256=8a66d6fb6ae7661c58995f9c6435bda2b1e68b54b598a6a10247bfcdadac996c (from -r /tmp/conda-lock-qt_o3_uj (line 13))
+INFO:root:  Downloading pynacl-1.6.2-cp38-abi3-manylinux_2_26_x86_64.manylinux_2_28_x86_64.whl (1.4 MB)
+INFO:root:[?25l     [38;5;237m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m0.0/1.4 MB[0m [31m?[0m eta [36m-:--:--[0m
+INFO:root:[2K     [38;2;114;156;31m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m1.4/1.4 MB[0m [31m22.1 MB/s[0m  [33m0:00:00[0m
+INFO:root:[?25hCollecting ruamel-yaml @ https://files.pythonhosted.org/packages/35/79/5e2cffa1c77432f11cd93a5351f30732c997a239d3a3090856a72d6d8ba7/ruamel.yaml-0.17.40-py3-none-any.whl#sha256=b16b6c3816dff0a93dca12acf5e70afd089fa5acb80604afd1ffa8b465b7722c (from -r /tmp/conda-lock-qt_o3_uj (line 15))
+INFO:root:  Downloading ruamel.yaml-0.17.40-py3-none-any.whl (113 kB)
+INFO:root:Collecting sure @ https://files.pythonhosted.org/packages/dd/ae/eb28ee3b6768e51cb938abcf521cb678217203f33385a2df54d3f23331c5/sure-2.0.1.tar.gz#sha256=c8fc6fabc0e7f6984eeabb942540e45646e5bef0bb99fe59e02da634e4d4b9ca (from -r /tmp/conda-lock-qt_o3_uj (line 17))
+INFO:root:  Downloading sure-2.0.1.tar.gz (48 kB)
+INFO:root:  Installing build dependencies: started
+INFO:root:  Installing build dependencies: finished with status 'done'
+INFO:root:  Getting requirements to build wheel: started
+INFO:root:  Getting requirements to build wheel: finished with status 'done'
+INFO:root:  Preparing metadata (pyproject.toml): started
+INFO:root:  Preparing metadata (pyproject.toml): finished with status 'done'
+INFO:root:Collecting hammer-vlsi @ https://files.pythonhosted.org/packages/dd/85/8a7ffd385db1dc84295ef3101559fe7ae0f8fa39942253ca270728642dc5/hammer_vlsi-1.2.0-py3-none-any.whl#sha256=7c237557d2a7c5f403474e54f9e5498758c71c24844e524a02656ac16369196d (from -r /tmp/conda-lock-qt_o3_uj (line 19))
+INFO:root:  Downloading hammer_vlsi-1.2.0-py3-none-any.whl (926 kB)
+INFO:root:[?25l     [38;5;237m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m0.0/926.6 kB[0m [31m?[0m eta [36m-:--:--[0m
+INFO:root:[2K     [38;2;114;156;31m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m926.6/926.6 kB[0m [31m31.3 MB/s[0m  [33m0:00:00[0m
+INFO:root:[?25hCollecting icontract @ https://files.pythonhosted.org/packages/ee/aa/ffc16b7ed17e052e7d2140e66336f829e9383f61f31249c4d181e12fcdea/icontract-2.7.3-py3-none-any.whl#sha256=8fb0f93f71211416f214f37c01b8017fdc8c079d70159f49f0ddcc10918c14d0 (from -r /tmp/conda-lock-qt_o3_uj (line 21))
+INFO:root:  Downloading icontract-2.7.3-py3-none-any.whl (40 kB)
+INFO:root:Collecting paramiko @ https://files.pythonhosted.org/packages/82/5b/eadf6d45de38d30ab603f49393b6cd2cbe7e233af8cf90197e32782b68a9/paramiko-5.0.0-py3-none-any.whl#sha256=b7044611c30140d9a75261653210e2002977b71a0497ff3ba0d98d7edbf62f7c (from -r /tmp/conda-lock-qt_o3_uj (line 23))
+INFO:root:  Downloading paramiko-5.0.0-py3-none-any.whl (208 kB)
+INFO:root:Collecting fab-classic @ https://files.pythonhosted.org/packages/90/5c/46f6f5a75207ea93e923c79a6acabb611e88409f2452ce2433fba680864a/fab_classic-1.21.0-py3-none-any.whl#sha256=070fa7b5c01d243d464e8dd4e7ba32b0478f0e7f74b4a9b048b58ec93d37375a (from -r /tmp/conda-lock-qt_o3_uj (line 25))
+INFO:root:  Downloading fab_classic-1.21.0-py3-none-any.whl (91 kB)
+INFO:root:Collecting pylddwrap @ https://files.pythonhosted.org/packages/c9/12/4afd6542c43cd20271f0e53bf0211decc10079a76a41e53c0288025a7b85/pylddwrap-1.2.2.tar.gz#sha256=a70437fea7bca647c0e98161e1006ef49970267999c571b499760f1c43c6ba10 (from -r /tmp/conda-lock-qt_o3_uj (line 27))
+INFO:root:  Downloading pylddwrap-1.2.2.tar.gz (22 kB)
+INFO:root:  Installing build dependencies: started
+INFO:root:  Installing build dependencies: finished with status 'done'
+INFO:root:  Getting requirements to build wheel: started
+INFO:root:  Getting requirements to build wheel: finished with status 'done'
+INFO:root:  Preparing metadata (pyproject.toml): started
+INFO:root:  Preparing metadata (pyproject.toml): finished with status 'done'
+INFO:root:Building wheels for collected packages: gdspy, sure, pylddwrap
+INFO:root:  Building wheel for gdspy (pyproject.toml): started
+INFO:root:  Building wheel for gdspy (pyproject.toml): finished with status 'done'
+INFO:root:  Created wheel for gdspy: filename=gdspy-1.4-cp310-cp310-linux_x86_64.whl size=148671 sha256=43822a78c734e09bb2932dc8f4ec5b06fc546b155d0c40f2132f48f425556aa5
+INFO:root:  Stored in directory: /home/hunter/.cache/pip/wheels/76/6c/ad/ceca40290789722565c96cea3ad78cc6e117eda5eb2f2f53b1
+INFO:root:  Building wheel for sure (pyproject.toml): started
+INFO:root:  Building wheel for sure (pyproject.toml): finished with status 'done'
+INFO:root:  Created wheel for sure: filename=sure-2.0.1-py3-none-any.whl size=35750 sha256=378dd6ec503764800e10b8abba71fec64eddb06fa1acbe016d81ecf166b367a2
+INFO:root:  Stored in directory: /home/hunter/.cache/pip/wheels/25/e5/c2/acf18a606d227997c8103c26d0386958021fb8daeee0b2dd6f
+INFO:root:  Building wheel for pylddwrap (pyproject.toml): started
+INFO:root:  Building wheel for pylddwrap (pyproject.toml): finished with status 'done'
+INFO:root:  Created wheel for pylddwrap: filename=pylddwrap-1.2.2-py3-none-any.whl size=15275 sha256=2e6bbc49db14fd3e794373b69d2b664528488ba258227702c4b6c6852a8f8529
+INFO:root:  Stored in directory: /home/hunter/.cache/pip/wheels/56/b6/cb/47f7b08532d83650b4fd3b44c1ab8a6cb4c6d02f3928428c14
+INFO:root:Successfully built gdspy sure pylddwrap
+INFO:root:Installing collected packages: sure, icontract, gdspy, asttokens, ruamel-yaml, pynacl, pylddwrap, paramiko, numpy, mock, invoke, hammer-vlsi, fab-classic, bcrypt
+INFO:root:[?25l
+INFO:root:[2K  Attempting uninstall: ruamel-yaml
+INFO:root:
+INFO:root:[2K    Found existing installation: ruamel.yaml 0.18.17
+INFO:root:
+INFO:root:[2K    Uninstalling ruamel.yaml-0.18.17:
+INFO:root:
+INFO:root:[2K      Successfully uninstalled ruamel.yaml-0.18.17
+INFO:root:
+INFO:root:[2K   [38;2;249;38;114m━━━━━━━━━━━━━━[0m[38;5;237m╺[0m[38;5;237m━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m 5/14[0m [pynacl]
+INFO:root:[2K  Attempting uninstall: numpy
+INFO:root:   [38;2;249;38;114m━━━━━━━━━━━━━━[0m[38;5;237m╺[0m[38;5;237m━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m 5/14[0m [pynacl]
+INFO:root:[2K    Found existing installation: numpy 2.2.6
+INFO:root:   [38;2;249;38;114m━━━━━━━━━━━━━━[0m[38;5;237m╺[0m[38;5;237m━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m 5/14[0m [pynacl]
+INFO:root:[2K    Uninstalling numpy-2.2.6:
+INFO:root:   [38;2;249;38;114m━━━━━━━━━━━━━━[0m[38;5;237m╺[0m[38;5;237m━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m 5/14[0m [pynacl]
+INFO:root:[2K      Successfully uninstalled numpy-2.2.6
+INFO:root:   [38;2;249;38;114m━━━━━━━━━━━━━━[0m[38;5;237m╺[0m[38;5;237m━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m 5/14[0m [pynacl]
+INFO:root:[2K   [38;2;249;38;114m━━━━━━━━━━━━━━━━━━━━━━[0m[38;2;249;38;114m╸[0m[38;5;237m━━━━━━━━━━━━━━━━━[0m [32m 8/14[0m [numpy]
+INFO:root:[2K   [38;2;249;38;114m━━━━━━━━━━━━━━━━━━━━━━[0m[38;2;249;38;114m╸[0m[38;5;237m━━━━━━━━━━━━━━━━━[0m [32m 8/14[0m [numpy]
+INFO:root:[2K   [38;2;249;38;114m━━━━━━━━━━━━━━━━━━━━━━[0m[38;2;249;38;114m╸[0m[38;5;237m━━━━━━━━━━━━━━━━━[0m [32m 8/14[0m [numpy]
+INFO:root:[2K   [38;2;249;38;114m━━━━━━━━━━━━━━━━━━━━━━[0m[38;2;249;38;114m╸[0m[38;5;237m━━━━━━━━━━━━━━━━━[0m [32m 8/14[0m [numpy]
+INFO:root:[2K   [38;2;249;38;114m━━━━━━━━━━━━━━━━━━━━━━[0m[38;2;249;38;114m╸[0m[38;5;237m━━━━━━━━━━━━━━━━━[0m [32m 8/14[0m [numpy]
+INFO:root:[2K   [38;2;249;38;114m━━━━━━━━━━━━━━━━━━━━━━[0m[38;2;249;38;114m╸[0m[38;5;237m━━━━━━━━━━━━━━━━━[0m [32m 8/14[0m [numpy]
+INFO:root:[2K   [38;2;249;38;114m━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m[38;2;249;38;114m╸[0m[38;5;237m━━━━━━━━━━━[0m [32m10/14[0m [invoke]
+INFO:root:[2K   [38;2;249;38;114m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m[38;5;237m╺[0m[38;5;237m━━━━━[0m [32m12/14[0m [fab-classic]
+INFO:root:[2K   [38;2;114;156;31m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m14/14[0m [bcrypt]
+INFO:root:[?25h
+INFO:root:[1A[2KSuccessfully installed asttokens-2.4.1 bcrypt-3.2.2 fab-classic-1.21.0 gdspy-1.4 hammer-vlsi-1.2.0 icontract-2.7.3 invoke-3.0.3 mock-5.2.0 numpy-1.26.4 paramiko-5.0.0 pylddwrap-1.2.2 pynacl-1.6.2 ruamel-yaml-0.17.40 sure-2.0.1
