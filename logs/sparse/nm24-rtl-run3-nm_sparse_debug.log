@@ -1,0 +1,35 @@
+/home/hunter/chipyard/common.mk:537: warning: overriding recipe for target 'run-asm-tests-fast'
+/home/hunter/chipyard/sims/verilator/generated-src/chipyard.harness.TestHarness.GemminiNMRocketConfig/chipyard.harness.TestHarness.GemminiNMRocketConfig.d:780: warning: ignoring old recipe for target 'run-asm-tests-fast'
+/home/hunter/chipyard/common.mk:540: warning: overriding recipe for target 'run-bmark-tests-fast'
+/home/hunter/chipyard/sims/verilator/generated-src/chipyard.harness.TestHarness.GemminiNMRocketConfig/chipyard.harness.TestHarness.GemminiNMRocketConfig.d:839: warning: ignoring old recipe for target 'run-bmark-tests-fast'
+if [ "../../generators/gemmini/software/gemmini-rocc-tests/build/bareMetalC/nm_sparse_debug-baremetal" != "none" ] && [ ! -f "../../generators/gemmini/software/gemmini-rocc-tests/build/bareMetalC/nm_sparse_debug-baremetal" ]; then printf "\n\nBinary ../../generators/gemmini/software/gemmini-rocc-tests/build/bareMetalC/nm_sparse_debug-baremetal not found\n\n"; exit 1; fi
+(set -o pipefail &&  /home/hunter/chipyard/sims/verilator/simulator-chipyard.harness-GemminiNMRocketConfig \
+	+permissive \
+	+dramsim +dramsim_ini_dir=/home/hunter/chipyard/generators/testchipip/src/main/resources/dramsim2_ini +max-cycles=10000000   +loadmem=../../generators/gemmini/software/gemmini-rocc-tests/build/bareMetalC/nm_sparse_debug-baremetal  \
+	+permissive-off \
+	../../generators/gemmini/software/gemmini-rocc-tests/build/bareMetalC/nm_sparse_debug-baremetal \
+	 \
+	</dev/null | tee /home/hunter/chipyard/sims/verilator/output/chipyard.harness.TestHarness.GemminiNMRocketConfig/nm_sparse_debug-baremetal.log)
+== Loading device model file '%Warning: System has stack size 8192 kb which may be too small; suggest 'ulimit -c 15365' or larger
+[UART] UART0 is here (stdin/stdout).
+/home/hunter/chipyard/generators/testchipip/src/main/resources/dramsim2_ini/DDR3_micron_64M_8B_x4_sg15.ini' == 
+== Loading system model file '/home/hunter/chipyard/generators/testchipip/src/main/resources/dramsim2_ini/system.ini' == 
+===== MemorySystem 0 =====
+CH. 0 TOTAL_STORAGE : 4096MB | 1 Ranks | 16 Devices per rank
+DRAMSim2 Clock Frequency =666666666Hz, CPU Clock Frequency=500000000Hz
+nm_sparse_debug 2:4
+  correct sparse             256 / 256
+  index ignored (all 0)        0 / 256
+  index rows flipped           0 / 256
+  index transposed             1 / 256
+  dense, no a_hi               3 / 256
+  dense + a_hi as bias         0 / 256
+row 0 got: 200 -51 52 -72 52 -111 8 -133 -80 16 -29 24 51 -11 -153 41 
+row 0 want: 200 -51 52 -72 52 -111 8 -133 -80 16 -29 24 51 -11 -153 41 
+nm_sparse_debug passed
+- /home/hunter/chipyard/sims/verilator/generated-src/chipyard.harness.TestHarness.GemminiNMRocketConfig/gen-collateral/TestDriver.v:158: Verilog $finish
+
+real	7m18.726s
+user	7m14.076s
+sys	0m0.496s
+EXIT=0
