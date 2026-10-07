@@ -1,0 +1,13 @@
+{
+    "folders": [
+        { "name": "Project (scripts, results, writeup)", "path": "." },
+        { "name": "Gemmini RTL (Scala)", "path": "/home/hunter/chipyard/generators/gemmini" },
+        { "name": "Gemmini tests (C)", "path": "/home/hunter/chipyard/generators/gemmini/software/gemmini-rocc-tests" },
+        { "name": "Spike model (C++)", "path": "/home/hunter/chipyard/generators/gemmini/software/libgemmini" }
+    ],
+    "settings": {
+        // the two software repos have their own folders above
+        "files.exclude": { "**/software/gemmini-rocc-tests": true, "**/software/libgemmini": true },
+        "search.exclude": { "**/build": true, "**/logs": true }
+    }
+}
