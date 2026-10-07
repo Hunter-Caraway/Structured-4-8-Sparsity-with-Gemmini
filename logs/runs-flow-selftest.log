@@ -1,0 +1,32 @@
+
+== building gemmini-rocc-tests
+63 bare metal tests built (incl. the _48 sparse variants)
+
+== spike tests -> /home/hunter/Structured 4:8 Sparsity with Gemmini/logs/runs/spike-20261006-025207.log
+pass  mvin_mvout
+pass  matmul
+pass  nm_sparse_sw
+pass  nm_sparse_matmul
+
+== nm_sparse_debug on GemminiNMRocketConfig -> /home/hunter/Structured 4:8 Sparsity with Gemmini/logs/runs/bench-nm24-nm_sparse_debug-20261006-025209.log
+passed  nm_sparse_debug
+
+== nm_sparse_matmul on GemminiNMRocketConfig -> /home/hunter/Structured 4:8 Sparsity with Gemmini/logs/runs/bench-nm24-nm_sparse_matmul-20261006-025209.log
+passed  nm_sparse_matmul
+
+== nm_sparse_perf on GemminiNMRocketConfig -> /home/hunter/Structured 4:8 Sparsity with Gemmini/logs/runs/bench-nm24-nm_sparse_perf-20261006-025209.log
+passed  nm_sparse_perf
+   dense            total   2217  array busy   1800  tiles 64
+   dense_bias       total   1994  array busy   1725  tiles 64
+   sparse           total   2977  array busy    960  tiles 32
+   sparse_nat       total   2633  array busy    960  tiles 32
+   dense_reuse      total   3623  array busy   1344  tiles 64
+   sparse_reuse     total   2508  array busy    672  tiles 32
+   cpu_dense        total   1551  array busy      0  tiles 64
+   cpu_sparse       total   1995  array busy      0  tiles 32
+   cpu_sparse_nat   total   2007  array busy      0  tiles 32
+   cpu_dense_reuse  total   2762  array busy      0  tiles 64
+   cpu_sparse_reuse total   2146  array busy      0  tiles 32
+
+== results appended to /home/hunter/Structured 4:8 Sparsity with Gemmini/results/cycles.csv
+FLOW_EXIT=0
