@@ -1,0 +1,38 @@
+/home/hunter/chipyard/common.mk:537: warning: overriding recipe for target 'run-asm-tests-fast'
+/home/hunter/chipyard/sims/verilator/generated-src/chipyard.harness.TestHarness.GemminiNMRocketConfig/chipyard.harness.TestHarness.GemminiNMRocketConfig.d:780: warning: ignoring old recipe for target 'run-asm-tests-fast'
+/home/hunter/chipyard/common.mk:540: warning: overriding recipe for target 'run-bmark-tests-fast'
+/home/hunter/chipyard/sims/verilator/generated-src/chipyard.harness.TestHarness.GemminiNMRocketConfig/chipyard.harness.TestHarness.GemminiNMRocketConfig.d:839: warning: ignoring old recipe for target 'run-bmark-tests-fast'
+mkdir -p /home/hunter/chipyard/sims/verilator/output/chipyard.harness.TestHarness.GemminiNMRocketConfig
+if [ "../../generators/gemmini/software/gemmini-rocc-tests/build/bareMetalC/nm_sparse_matmul-baremetal" != "none" ] && [ ! -f "../../generators/gemmini/software/gemmini-rocc-tests/build/bareMetalC/nm_sparse_matmul-baremetal" ]; then printf "\n\nBinary ../../generators/gemmini/software/gemmini-rocc-tests/build/bareMetalC/nm_sparse_matmul-baremetal not found\n\n"; exit 1; fi
+(set -o pipefail &&  /home/hunter/chipyard/sims/verilator/simulator-chipyard.harness-GemminiNMRocketConfig \
+	+permissive \
+	+dramsim +dramsim_ini_dir=/home/hunter/chipyard/generators/testchipip/src/main/resources/dramsim2_ini +max-cycles=10000000   +loadmem=../../generators/gemmini/software/gemmini-rocc-tests/build/bareMetalC/nm_sparse_matmul-baremetal  \
+	+permissive-off \
+	../../generators/gemmini/software/gemmini-rocc-tests/build/bareMetalC/nm_sparse_matmul-baremetal \
+	 \
+	</dev/null | tee /home/hunter/chipyard/sims/verilator/output/chipyard.harness.TestHarness.GemminiNMRocketConfig/nm_sparse_matmul-baremetal.log)
+== Loading device model file '/home/hunter/chipyard/generators/testchipip/src/main/resources/dramsim2_ini/DDR3_micron_64M_8B_x4_sg15.ini' == 
+%Warning: System has stack size 8192 kb which may be too small; suggest 'ulimit -c 15364' or larger
+[UART] UART0 is here (stdin/stdout).
+== Loading system model file '/home/hunter/chipyard/generators/testchipip/src/main/resources/dramsim2_ini/system.ini' == 
+===== MemorySystem 0 =====
+CH. 0 TOTAL_STORAGE : 4096MB | 1 Ranks | 16 Devices per rank
+DRAMSim2 Clock Frequency =666666666Hz, CPU Clock Frequency=500000000Hz
+nm_sparse_matmul: 2:4, i=32 k=64 j=32
+sparse mismatch at (0,0): got 230 want 61
+dense  cycles: 611 (16 preload/compute pairs)
+sparse cycles: 22674 (8 preload/compute pairs, 4 meta cmds each)
+nm_sparse_matmul FAILED
+*** FAILED *** (tohost = 1)
+[2070585000] %Error: TestHarness.sv:99: Assertion failed in TOP.TestDriver.testHarness: Assertion failed: *** FAILED *** (exit code =          1)
+
+    at SimTSI.scala:21 assert(!error, "*** FAILED *** (exit code = %%d)\n", exit >> 1.U)
+
+%Error: /home/hunter/chipyard/sims/verilator/generated-src/chipyard.harness.TestHarness.GemminiNMRocketConfig/gen-collateral/TestHarness.sv:99: Verilog $stop
+Aborting...
+make: *** [/home/hunter/chipyard/common.mk:395: ../../generators/gemmini/software/gemmini-rocc-tests/build/bareMetalC/nm_sparse_matmul-baremetal.run.fast] Error 255
+
+real	8m59.959s
+user	8m52.835s
+sys	0m0.705s
+EXIT=2
