@@ -1,0 +1,29 @@
+/home/hunter/chipyard/common.mk:537: warning: overriding recipe for target 'run-asm-tests-fast'
+/home/hunter/chipyard/sims/verilator/generated-src/chipyard.harness.TestHarness.GemminiRocketConfig/chipyard.harness.TestHarness.GemminiRocketConfig.d:780: warning: ignoring old recipe for target 'run-asm-tests-fast'
+/home/hunter/chipyard/common.mk:540: warning: overriding recipe for target 'run-bmark-tests-fast'
+/home/hunter/chipyard/sims/verilator/generated-src/chipyard.harness.TestHarness.GemminiRocketConfig/chipyard.harness.TestHarness.GemminiRocketConfig.d:839: warning: ignoring old recipe for target 'run-bmark-tests-fast'
+if [ "/tmp/tmp.WRItqCJhPj/fair_perf_dense_only-baremetal" != "none" ] && [ ! -f "/tmp/tmp.WRItqCJhPj/fair_perf_dense_only-baremetal" ]; then printf "\n\nBinary /tmp/tmp.WRItqCJhPj/fair_perf_dense_only-baremetal not found\n\n"; exit 1; fi
+(set -o pipefail &&  /home/hunter/chipyard/sims/verilator/simulator-chipyard.harness-GemminiRocketConfig \
+	+permissive \
+	+dramsim +dramsim_ini_dir=/home/hunter/chipyard/generators/testchipip/src/main/resources/dramsim2_ini +max-cycles=150000000   +loadmem=/tmp/tmp.WRItqCJhPj/fair_perf_dense_only-baremetal  \
+	+permissive-off \
+	/tmp/tmp.WRItqCJhPj/fair_perf_dense_only-baremetal \
+	 \
+	</dev/null | tee /home/hunter/chipyard/sims/verilator/output/chipyard.harness.TestHarness.GemminiRocketConfig/fair_perf_dense_only-baremetal.log)
+== Loading device model file '%Warning: System has stack size 8192 kb which may be too small; suggest 'ulimit -c 15363' or larger
+[UART] UART0 is here (stdin/stdout).
+/home/hunter/chipyard/generators/testchipip/src/main/resources/dramsim2_ini/DDR3_micron_64M_8B_x4_sg15.ini' == 
+== Loading system model file '/home/hunter/chipyard/generators/testchipip/src/main/resources/dramsim2_ini/system.ini' == 
+===== MemorySystem 0 =====
+CH. 0 TOTAL_STORAGE : 4096MB | 1 Ranks | 16 Devices per rank
+DRAMSim2 Clock Frequency =666666666Hz, CPU Clock Frequency=500000000Hz
+fair_perf: 2:4, i=64 k=128 j=32
+dense          total   1604  cpu_issue_done   1530  pairs  64  cyc/pair   25 | ex_active=1305 rs_full=1630 ctrl_q_block=0 overlap_haz=0 spad_a_wait=111 spad_b_wait=192 spad_d_wait=291 main_ex=1446
+dense matches the cpu reference (2048 values)
+dense_reuse    total   1622  cpu_issue_done   1556  pairs  64  cyc/pair   25 | ex_active=1257 rs_full=1649 ctrl_q_block=0 overlap_haz=0 spad_a_wait=360 spad_b_wait=0 spad_d_wait=344 main_ex=1511
+dense_reuse matches the cpu reference (2048 values)
+cpu only (no gemmini instructions issued):
+cpu_dense      total   1120  cpu_issue_done   1118  pairs  64  cyc/pair   17 | ex_active=0 rs_full=1226 ctrl_q_block=0 overlap_haz=0 spad_a_wait=1181 spad_b_wait=0 spad_d_wait=1151 main_ex=0
+cpu_dense_reuse total   1075  cpu_issue_done   1073  pairs  64  cyc/pair   16 | ex_active=0 rs_full=1183 ctrl_q_block=0 overlap_haz=0 spad_a_wait=1138 spad_b_wait=0 spad_d_wait=1108 main_ex=0
+fair_perf passed
+- /home/hunter/chipyard/sims/verilator/generated-src/chipyard.harness.TestHarness.GemminiRocketConfig/gen-collateral/TestDriver.v:158: Verilog $finish
