@@ -1,0 +1,180 @@
+ ========== BEGINNING STEP 1: Conda environment setup ==========
+Channels:
+ - conda-forge
+Platform: linux-64
+Collecting package metadata (repodata.json): ...working... done
+Solving environment: ...working... done
+
+## Package Plan ##
+
+  environment location: /home/hunter/chipyard/.conda-lock-env
+
+  added / updated specs:
+    - conda-lock
+
+
+The following NEW packages will be INSTALLED:
+
+  _openmp_mutex      conda-forge/linux-64::_openmp_mutex-4.5-20_gnu 
+  _python_abi3_supp~ conda-forge/noarch::_python_abi3_support-1.0-hd8ed1ab_3 
+  annotated-types    conda-forge/noarch::annotated-types-0.8.0-pyhd8ed1ab_0 
+  appdirs            conda-forge/noarch::appdirs-1.4.4-pyhd8ed1ab_1 
+  backports          conda-forge/noarch::backports-1.0-pyhd8ed1ab_5 
+  backports.tarfile  conda-forge/noarch::backports.tarfile-1.2.0-pyhcf101f3_2 
+  backports.zstd     conda-forge/noarch::backports.zstd-1.7.0-py314h680f03e_1 
+  boltons            conda-forge/noarch::boltons-26.2.0-pyhd8ed1ab_0 
+  brotli-python      conda-forge/linux-64::brotli-python-1.2.0-py314hcd2bdb6_4 
+  bzip2              conda-forge/linux-64::bzip2-1.0.8-hda65f42_10 
+  ca-certificates    conda-forge/noarch::ca-certificates-2026.7.22-hbd8a1cb_0 
+  cachecontrol       conda-forge/noarch::cachecontrol-0.14.4-pyha770c72_0 
+  cachecontrol-with~ conda-forge/noarch::cachecontrol-with-filecache-0.14.4-pyhd8ed1ab_0 
+  certifi            conda-forge/noarch::certifi-2026.7.22-pyhd8ed1ab_0 
+  cffi               conda-forge/linux-64::cffi-2.1.1-py314h8d76f0c_3 
+  charset-normalizer conda-forge/linux-64::charset-normalizer-3.5.2-h1114479_0 
+  click              conda-forge/noarch::click-8.5.0-pyh5ded981_0 
+  click-default-gro~ conda-forge/noarch::click-default-group-1.2.4-pyhd8ed1ab_1 
+  colorama           conda-forge/noarch::colorama-0.4.6-pyhd8ed1ab_1 
+  conda-lock         conda-forge/noarch::conda-lock-4.0.2-pyha191276_0 
+  conda-package-str~ conda-forge/noarch::conda-package-streaming-0.13.0-pyhd8ed1ab_0 
+  cpython            conda-forge/noarch::cpython-3.14.7-py314hd8ed1ab_106 
+  crashtest          conda-forge/noarch::crashtest-0.4.1-pyhd8ed1ab_1 
+  cryptography       conda-forge/linux-64::cryptography-50.0.2-py311hc91d8b8_0 
+  dbus               conda-forge/linux-64::dbus-1.16.2-he8c428d_2 
+  distlib            conda-forge/noarch::distlib-0.4.3-pyhcf101f3_0 
+  dulwich            conda-forge/linux-64::dulwich-0.24.10-py314ha5689aa_1 
+  ensureconda        conda-forge/noarch::ensureconda-1.6.0-pyhcf101f3_0 
+  filelock           conda-forge/noarch::filelock-3.32.6-pyhd8ed1ab_0 
+  gitdb              conda-forge/noarch::gitdb-4.0.12-pyhd8ed1ab_0 
+  gitpython          conda-forge/noarch::gitpython-3.2.0-pyh5ded981_0 
+  h2                 conda-forge/noarch::h2-4.4.1-pyhcf101f3_0 
+  hpack              conda-forge/noarch::hpack-4.2.0-pyhd8ed1ab_0 
+  hyperframe         conda-forge/noarch::hyperframe-6.1.0-pyhd8ed1ab_0 
+  idna               conda-forge/noarch::idna-3.20-pyh5ded981_0 
+  importlib-metadata conda-forge/noarch::importlib-metadata-9.0.1-pyhcf101f3_0 
+  importlib_resourc~ conda-forge/noarch::importlib_resources-7.1.0-pyhd8ed1ab_0 
+  jaraco.classes     conda-forge/noarch::jaraco.classes-3.4.0-pyhcf101f3_3 
+  jaraco.context     conda-forge/noarch::jaraco.context-6.1.2-pyhcf101f3_0 
+  jaraco.functools   conda-forge/noarch::jaraco.functools-4.6.0-pyhcf101f3_0 
+  jeepney            conda-forge/noarch::jeepney-0.9.0-pyhd8ed1ab_0 
+  jinja2             conda-forge/noarch::jinja2-3.1.6-pyhcf101f3_1 
+  keyring            conda-forge/noarch::keyring-25.7.0-pyha804496_0 
+  ld_impl_linux-64   conda-forge/linux-64::ld_impl_linux-64-2.46.1-default_hbd61a6d_102 
+  libexpat           conda-forge/linux-64::libexpat-2.8.5-hd2095e1_0 
+  libffi             conda-forge/linux-64::libffi-3.7.0-h81df57d_1 
+  libgcc             conda-forge/linux-64::libgcc-16.2.0-ha9f2e26_7 
+  libglib            conda-forge/linux-64::libglib-2.90.0-h569388d_0 
+  libgomp            conda-forge/linux-64::libgomp-16.2.0-he0feb66_7 
+  libiconv           conda-forge/linux-64::libiconv-1.18-h0cb94f2_3 
+  liblzma            conda-forge/linux-64::liblzma-5.8.3-hb03c661_1 
+  libmpdec           conda-forge/linux-64::libmpdec-4.0.0-hb03c661_2 
+  libpython          conda-forge/linux-64::libpython-3.14.7-hdc7f604_106_cp314 
+  libsqlite          conda-forge/linux-64::libsqlite-3.53.4-h0737f62_102 
+  libstdcxx          conda-forge/linux-64::libstdcxx-16.2.0-h934c35e_7 
+  libuuid            conda-forge/linux-64::libuuid-2.42.4-hcfc3c73_0 
+  libzlib            conda-forge/linux-64::libzlib-1.3.2-h25fd6f3_3 
+  markupsafe         conda-forge/linux-64::markupsafe-3.0.4-py314hd42368d_0 
+  more-itertools     conda-forge/noarch::more-itertools-11.1.0-pyhcf101f3_0 
+  msgpack-python     conda-forge/linux-64::msgpack-python-1.2.3-py314h5383ef5_0 
+  ncurses            conda-forge/linux-64::ncurses-6.6-hdb14827_1 
+  openssl            conda-forge/linux-64::openssl-3.6.5-h781a0a9_0 
+  packaging          conda-forge/noarch::packaging-26.3-pyhc364b38_0 
+  pcre2              conda-forge/linux-64::pcre2-10.47-h8b3dc9c_1 
+  pip                conda-forge/noarch::pip-26.2.1-pyh145f28c_0 
+  pkginfo            conda-forge/noarch::pkginfo-1.12.1.2-pyhd8ed1ab_0 
+  platformdirs       conda-forge/noarch::platformdirs-4.12.3-pyh5ded981_0 
+  pycparser          conda-forge/noarch::pycparser-3.0-pyhcf101f3_0 
+  pydantic           conda-forge/noarch::pydantic-2.13.5-pyhcf101f3_0 
+  pydantic-core      conda-forge/linux-64::pydantic-core-2.46.5-py314h7e8cd81_2 
+  pyproject_hooks    conda-forge/noarch::pyproject_hooks-1.2.0-pyhd8ed1ab_1 
+  pysocks            conda-forge/noarch::pysocks-1.7.1-pyha55dd90_7 
+  python             conda-forge/linux-64::python-3.14.7-hcd007b5_106_cp314 
+  python-build       conda-forge/noarch::python-build-1.6.1-pyhc364b38_0 
+  python-fastjsonsc~ conda-forge/noarch::python-fastjsonschema-2.22.2-pyhcf101f3_0 
+  python-gil         conda-forge/noarch::python-gil-3.14.7-h4df99d1_106 
+  python-installer   conda-forge/noarch::python-installer-1.0.1-pyh332efcf_0 
+  python_abi         conda-forge/noarch::python_abi-3.14-9_cp314 
+  pyyaml             conda-forge/linux-64::pyyaml-6.0.3-py314h67df5f8_1 
+  readline           conda-forge/linux-64::readline-8.3-hd6e31c0_1 
+  requests           conda-forge/noarch::requests-2.34.2-pyhcf101f3_0 
+  requests-toolbelt  conda-forge/noarch::requests-toolbelt-1.0.0-pyhd8ed1ab_1 
+  ruamel.yaml        conda-forge/noarch::ruamel.yaml-0.19.1-pyhcf101f3_0 
+  ruamel.yaml.clib   conda-forge/linux-64::ruamel.yaml.clib-0.2.15-py314hfe1a184_5 
+  secretstorage      conda-forge/noarch::secretstorage-3.5.0-pyhc9edb4d_3 
+  semver             conda-forge/noarch::semver-3.1.0-pyh5ded981_0 
+  setuptools         conda-forge/noarch::setuptools-84.0.0-pyh332efcf_0 
+  shellingham        conda-forge/noarch::shellingham-1.5.4-pyhd8ed1ab_2 
+  smmap              conda-forge/noarch::smmap-5.0.3-pyhcf101f3_1 
+  tk                 conda-forge/linux-64::tk-8.6.13-noxft_h1df4ec4_4 
+  tomli              conda-forge/noarch::tomli-2.4.1-pyhcf101f3_0 
+  tomlkit            conda-forge/noarch::tomlkit-0.15.1-pyhcf101f3_0 
+  trove-classifiers  conda-forge/noarch::trove-classifiers-2026.9.21.13-pyh5ded981_0 
+  typing-extensions  conda-forge/noarch::typing-extensions-4.16.0-h69aa097_0 
+  typing-inspection  conda-forge/noarch::typing-inspection-0.4.4-pyhcf101f3_0 
+  typing_extensions  conda-forge/noarch::typing_extensions-4.16.0-pyhcf101f3_0 
+  tzdata             conda-forge/noarch::tzdata-2026c-h151e31d_0 
+  urllib3            conda-forge/noarch::urllib3-2.8.0-pyhd8ed1ab_0 
+  virtualenv         conda-forge/noarch::virtualenv-20.39.0-pyhcf101f3_0 
+  yaml               conda-forge/linux-64::yaml-0.2.5-hebe6cf0_3 
+  zipp               conda-forge/noarch::zipp-4.1.1-pyh5ded981_0 
+  zstandard          conda-forge/linux-64::zstandard-0.25.0-py314hfe1a184_4 
+  zstd               conda-forge/linux-64::zstd-1.5.7-hb78ec9c_7 
+
+
+
+Downloading and Extracting Packages: ...working... done
+Preparing transaction: ...working... done
+Verifying transaction: ...working... done
+Executing transaction: ...working... WARNING conda.conda_pypi.main:notify_conda_pypi_tip(158): 
+  Did you know? You can install many PyPI packages with conda
+  using conda-pypi. Get started:
+    https://bit.ly/4xXYt0B
+
+done
+#
+# To activate this environment, use
+#
+#     $ conda activate /home/hunter/chipyard/.conda-lock-env
+#
+# To deactivate an active environment, use
+#
+#     $ conda deactivate
+
+Using lockfile for conda: /home/hunter/chipyard/conda-reqs/conda-lock-reqs/conda-requirements-riscv-tools-linux-64.conda-lock.yml
+Storing main conda environment in /home/hunter/chipyard/.conda-env
+Usage: conda-lock install [OPTIONS] [LOCK_FILE]
+
+Options:
+  --conda TEXT                    path (or name) of the conda/mamba executable
+                                  to use.
+  --mamba / --no-mamba            don't attempt to use or install mamba.
+                                  [default: mamba]
+  --micromamba / --no-micromamba  don't attempt to use or install micromamba.
+                                  [default: no-micromamba]
+  --copy                          Install using `--copy` to prevent links.
+                                  This is useful for building containers
+  -p, --prefix TEXT               Full path to environment location (i.e.
+                                  prefix).
+  -n, --name TEXT                 Name of environment.
+  --auth TEXT                     The auth file provided as string. Has
+                                  precedence over `--auth-file`.  [default:
+                                  ""]
+  --auth-file TEXT                Path to the authentication file.  [default:
+                                  ""]
+  --validate-platform / --no-validate-platform
+                                  Whether the platform compatibility between
+                                  your lockfile and the host system should be
+                                  validated.  [default: validate-platform]
+  --log-level [DEBUG|INFO|WARNING|ERROR|CRITICAL]
+                                  Log level.  [default: INFO]
+  --dev / --no-dev                install dev dependencies from the lockfile
+                                  (where applicable)  [default: dev]
+  -E, --extras TEXT               include extra dependencies from the lockfile
+                                  (where applicable)
+  --force-platform TEXT           Force using the given platform when
+                                  installing from the lockfile, instead of the
+                                  native platform.  [default: (dynamic)]
+  --preserve-temp-dirs            Preserve temporary directories and files
+                                  created during the installation process for
+                                  debugging purposes.
+  -h, --help                      Show this message and exit.
+build-setup.sh: Build script failed with exit code 1 at step 1: Conda environment setup
