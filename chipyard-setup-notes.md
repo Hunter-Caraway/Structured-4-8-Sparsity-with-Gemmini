@@ -189,7 +189,7 @@ The design is generic N:M with M = 2N. **2:4 and 4:8 both pass on Spike and on t
 
 4:8 versions are built as `*_48-baremetal` with `-DNM_N=4 -DNM_M=8`. `./run-flow.sh tests` does this.
 
-## Original benchmark results (WITHDRAWN, kept as a historical record) (Verilator RTL, cycles measured with rdcycle around the Gemmini work)
+## Original benchmark results: WITHDRAWN, kept only as a historical record
 
 > **Withdrawn. Don't cite anything in this section.** These numbers came from the original test loop, which slowed
 > down normal (dense) mode more than sparse mode. The later "fair" benchmark that replaced it has also been withdrawn,
