@@ -1,8 +1,0 @@
-start Tue Oct  6 11:12:58 AM EDT 2026
-nm24 nm_sparse_debug exit=0 11:19:54
-nm48 nm_sparse_debug exit=0 11:20:11
-nm24 nm_sparse_matmul exit=0 11:28:49
-nm48 nm_sparse_matmul exit=0 11:31:14
-nm24 nm_sparse_perf exit=0 11:37:34
-nm48 nm_sparse_perf exit=0 11:40:35
-done Tue Oct  6 11:40:35 AM EDT 2026
