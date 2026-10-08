@@ -120,7 +120,8 @@ If something Gemmini-specific breaks later, checking out `e0207441` in Chipyard 
 
 ## Gemmini branch
 
-Created branch `sparse-nm` in `~/chipyard/generators/gemmini` at `8c3f9923`. No remotes added, nothing pushed.
+Created branch `sparse-nm` in `~/chipyard/generators/gemmini` at `8c3f9923`. (At this point nothing was pushed; the
+branches were later published to the `Hunter-Caraway` forks listed in the README.)
 (The submodule's existing `origin` is `ucb-bar/gemmini` from the submodule init.)
 
 ## Logs in this folder
@@ -147,7 +148,8 @@ logs/sparse/rtl-wip-backup.patch                  safety copy of the RTL edits t
 
 # N:M sparsity work (overnight, 2026-10-06)
 
-Everything is on local `sparse-nm` branches; nothing is pushed and no remotes were changed. Three repos are involved:
+The work is on `sparse-nm` branches, which were later published to the `Hunter-Caraway` forks (see the README).
+Three repos are involved:
 
 | Repo | Commits |
 |---|---|
@@ -187,7 +189,11 @@ The design is generic N:M with M = 2N. **2:4 and 4:8 both pass on Spike and on t
 
 4:8 versions are built as `*_48-baremetal` with `-DNM_N=4 -DNM_M=8`. `./run-flow.sh tests` does this.
 
-## Results (Verilator RTL, cycles measured with rdcycle around the Gemmini work)
+## Original benchmark results (WITHDRAWN, kept as a historical record) (Verilator RTL, cycles measured with rdcycle around the Gemmini work)
+
+> **Withdrawn. Don't cite anything in this section.** These numbers came from the original test loop, which slowed
+> down normal (dense) mode more than sparse mode. The later "fair" benchmark that replaced it has also been withdrawn,
+> pending a corrected re-run (see the README). The 1.44× / 1.36× speed-ups below are not valid results.
 
 64×128×32 matmul, int8 in, int32 accumulate; weights pruned to the pattern for both dense and sparse runs. "Array
 busy" is the execute controller's compute-state cycles (`EXE_ACTIVE_CYCLE`).

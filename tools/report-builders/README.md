@@ -7,7 +7,7 @@ The scripts that generated the PDF reports removed on 2026-10-06, kept so the re
 | `build_paper.py` | `N-M-Sparsity-Paper-Summary.pdf` | The 4-page plain-language summary. Reads `verification/paper_data.json` and `pattern_fidelity.out`. **Start here.** |
 | `build_changes.py` | `Gemmini-NM-Code-Changes.pdf` | Every code change, with diffs, read live from the `sparse-nm` branches in `~/chipyard` |
 | `build_report.py` | `N-M-Sparsity-Run-Report.pdf` | Detailed run report. **Its speed-up figures are superseded**; reuse only the setup/debugging parts |
-| `build_explained.py` | `N-M-Sparsity-Explained.pdf` | Long plain-language explainer. Superseded speed-ups too |
+| `build_explained.py` | `N-M-Sparsity-Explained.pdf` | **Withdrawn**: its numbers are hard-coded from the superseded benchmark. The script refuses to run |
 
 ## Before running them
 

@@ -16,8 +16,9 @@ This project:
   M:1 mux that picks the right input activation for each kept weight. The indexes are sent with a new
   `NM_META_CMD` instruction (funct 26) into a 4-deep FIFO, and sparse mode is switched on with `config_ex`
   rs1[10]. There are two new chip configs: `GemminiNMRocketConfig` (2:4) and `GemminiNM48RocketConfig` (4:8).
-- **Adds a matching functional model to Spike** (Gemmini's `libgemmini` extension), plus a fix for an upstream
-  bug where `gemmini_state_t::reset` left state uninitialized.
+- **Adds a functional model of the sparse mode to Spike** (Gemmini's `libgemmini` extension). Two known
+  differences from the RTL (the a_hi address stride and the 4-tile index-queue limit) are being fixed. It also
+  initializes more of `gemmini_state_t` in `reset`; some fields are still left uninitialized and are being fixed.
 - **Adds software and tests.** `gemmini_nm.h` holds the prune/compress/pack helpers and the sparse-mode
   wrappers. The new tests are `nm_sparse_{sw,matmul,debug,perf}`, and the fair benchmark is
   `verification/fair_perf.c`.

@@ -1,5 +1,8 @@
 #!/usr/bin/env python3
-"""Plain-language report: what was built, proof it works, what the speedups mean, where every number came from."""
+"""WITHDRAWN. Don't use. This builds the old plain-language report. Every speed-up in it (2.00x, 1.88x, 1.44x,
+1.36x, 0.64-0.84x) comes from the original benchmark, which has been withdrawn. Kept only as a historical record.
+The script refuses to run. A new report must be built from the corrected re-run."""
+raise SystemExit("build_explained.py is withdrawn: its speed-up numbers come from the superseded benchmark")
 import re, csv
 from pathlib import Path
 from PIL import Image, ImageDraw, ImageFont
