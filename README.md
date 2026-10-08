@@ -21,28 +21,28 @@ This project:
 - **Adds software and tests.** `gemmini_nm.h` holds the prune/compress/pack helpers and the sparse-mode
   wrappers. The new tests are `nm_sparse_{sw,matmul,debug,perf}`, and the fair benchmark is
   `verification/fair_perf.c`.
-- **Measures it fairly.** The same program runs on Berkeley's chip and ours. Every output is checked against a
-  CPU reference, and there's an independent numpy check of the sparse math (with fault injection) and a
-  one-command verifier with checksums of every log.
+- **Measures it against Berkeley's design.** The benchmark (`verification/fair_perf.c`) runs the same matmul on
+  Berkeley's chip and ours, and checks every output against a CPU reference.
 
-### Results (fair benchmark, 64×128×32 int8 matmul, data preloaded in the scratchpad)
+### Results: withdrawn, re-run pending
 
-| Clock cycles | Berkeley original | Ours, 2:4 | Ours, 4:8 |
-|---|---|---|---|
-| Multiplier grid working time | 1,257 | 672 (**1.87×** faster) | 672 (**1.87×** faster) |
-| Whole job, weights reused | 1,622 | 1,686 (0.96×) | 1,913 (0.85×) |
-| Whole job, fresh weights | 1,604 | 2,778 (0.58×) | 3,827 (0.42×) |
+The cycle-count results previously published here have been **withdrawn**. A code review found problems in how
+they were measured:
 
-- All answers are correct. With sparsity off, our chip matches Berkeley's cycle for cycle (1,604 = 1,604), so
-  the sparse hardware doesn't slow down normal use.
-- **Takeaway:** the systolic array finishes the multiplying in about half the time. But sending the position
-  notes costs extra instructions per tile (4 for 2:4, 8 for 4:8), and that uses up the savings at this size.
-  Overall, 2:4 comes out about even and 4:8 comes out slower.
-- **How much of the weights each pattern keeps** (`verification/pattern_fidelity.py`): 4:8 keeps 90–94%, 2:4
-  keeps 87–92%, and NVIDIA's paired 4:8 keeps 79–86%.
+- **Different programs:** the comparison with Berkeley's chip used two different builds of the benchmark. Code
+  placement alone changes the timings by several percent.
+- **Cold caches:** each timed run included the processor's first-time instruction-cache misses, and these affect
+  the sparse runs more.
+- **Random starting state:** the "same cycle count as Berkeley with sparsity off" match depended on each
+  simulator's random initial state.
 
-Earlier drafts quoted 1.44× / 1.36× end-to-end speed-ups. Those came from a test loop that slowed down normal
-mode more than sparse mode, so they are superseded. Only cite `verification/fair_perf.c`.
+The benchmark, the tests and the tooling are being fixed. New results will be published here only after a full
+re-run with the corrected benchmark, run across several random seeds. Until then, please don't cite any earlier
+numbers from this project, including the 1.44× / 1.36× figures in older drafts.
+
+**Pattern comparison** (`verification/pattern_fidelity.py`; not a timing result): on synthetic Gaussian and
+Laplace weights, 4:8 keeps 90–94% of the weights' energy (sum of squares), 2:4 keeps 87–92%, and NVIDIA's paired
+4:8 keeps 79–86%.
 
 ## Credit: what's Berkeley's and what's ours
 
@@ -67,24 +67,25 @@ branch point is ours:
 | `gemmini` (from `8c3f9923`) | +277/−20 lines in 10 Scala files: sparse mode in `PE`, `Tile`, `Mesh`, `MeshWithDelays`; index FIFO and `NM_META_CMD` in `ExecuteController`/`Controller`/`GemminiISA`; `GemminiNMRocketConfig` and `GemminiNM48RocketConfig` |
 | `libgemmini` (from `ea8f7ed`) | +156/−27 lines in `gemmini.cc` / `gemmini.h`: the Spike model of sparse mode, and the `gemmini_state_t::reset` fix |
 | `gemmini-rocc-tests` (from `7c540b3`) | 886 new lines: `include/gemmini_nm.h` and the `bareMetalC/nm_sparse_{sw,matmul,debug,perf}.c` tests |
-| This repo | Benchmarks (`verification/fair_perf.c`, `berkeley_dense_perf.c`), the verification and analysis scripts, `run-flow.sh`, figures, logs, and setup notes |
+| This repo | Benchmarks (`verification/fair_perf.c`, `berkeley_dense_perf.c`), the verification and analysis scripts, `run-flow.sh`, and setup notes |
 
 To see exactly what we changed, compare against Berkeley's base, for example
 `git diff 8c3f9923 sparse-nm` in the gemmini fork.
 
 ## Run it yourself
 
-### 0. Just check the recorded results (no Chipyard needed, seconds)
+### 0. Quick checks (no Chipyard needed, seconds)
 
 ```bash
 git clone https://github.com/Hunter-Caraway/Structured-4-8-Sparsity-with-Gemmini.git
 cd Structured-4-8-Sparsity-with-Gemmini
 pip install numpy pandas matplotlib
-python3 verification/verify_all.py              # re-checks every number against the logs + checksums
 python3 verification/independent_math_check.py  # sparse math == dense math in numpy, with fault injection
-python3 verification/pattern_fidelity.py        # share of weights kept by 2:4, 4:8, paired 4:8
-python3 analysis/advanced_visuals.py            # regenerates the figures in analysis/advanced/
+python3 verification/pattern_fidelity.py        # share of weight energy kept by 2:4, 4:8, paired 4:8
 ```
+
+`verify_all.py`, `cross_check.py`, `compare_runs.py` and the chart scripts read the withdrawn result logs. They
+won't run until the re-run produces new results.
 
 ### 1. Install Chipyard
 
@@ -129,13 +130,14 @@ Chipyard isn't at `~/chipyard`.
 ./run-flow.sh spike          # quick functional tests on Spike (seconds)
 ./run-flow.sh sim nm24       # build the 2:4 Verilator simulator (long)
 ./run-flow.sh sim nm48       # build the 4:8 Verilator simulator (long)
-./run-flow.sh fair           # the fair benchmark on all chips (~15-40 min, in parallel), compared with the record
+./run-flow.sh fair           # the fair benchmark on all chips (~15-40 min, in parallel)
 ./run-flow.sh checks         # all python checks + figures
 ./run-flow.sh all            # or all of the above in one go
 ```
 
-New simulation runs go to `verification/runs/<stamp>/`. They are compared automatically with the recorded
-results and never overwrite them. `run-flow.sh` blocks sleep while simulations run.
+New simulation runs go to `verification/runs/<stamp>/`. `run-flow.sh` blocks sleep while simulations run. The
+steps that compare runs with the recorded results (`fair`, `checks`) will fail until new results are recorded. The
+flow script is also being fixed.
 
 **Berkeley's stock simulator.** For the baseline, `GemminiRocketConfig` has to be built from **unmodified**
 Gemmini sources (check out `master` in all three repos, build it, then switch back to `sparse-nm`). Chipyard
@@ -155,11 +157,9 @@ rebuilds a simulator whenever Gemmini's Scala changes. So `run-flow.sh` runs the
 |---|---|
 | `chipyard-setup-notes.md` | Installing Chipyard on Fedora 44, plus design notes from the sparsity work |
 | `run-flow.sh` | The whole flow in one script: env check → Spike extension → tests → simulators → benchmarks |
-| `verification/` | **The results to cite** (the fair benchmark) and every check (see below) |
-| `analysis/advanced_visuals.py`, `analysis/advanced/` | Publication figures from the fair results (light/dark PNG + vector PDF) |
-| `analysis/make_charts.py`, `chart_all_data.py`, `charts/`, `all_data.csv` | Charts of the original (superseded) benchmark, kept as the record |
-| `results/cycles.csv` | Original benchmark results (superseded loop; kept as the record) |
-| `logs/` | Every setup, build, and simulation log from the original work |
+| `verification/` | The benchmark and every check (see below) |
+| `analysis/advanced_visuals.py`, `make_charts.py`, `chart_all_data.py` | Figure scripts. Their figures were withdrawn with the results and will be regenerated after the re-run |
+| `logs/setup/` | Chipyard setup and build logs |
 | `tools/report-builders/` | Scripts that generate the PDF reports |
 
 ### Inside `verification/`
@@ -167,14 +167,12 @@ rebuilds a simulator whenever Gemmini's Scala changes. So `run-flow.sh` runs the
 | Path | What it is |
 |---|---|
 | `fair_perf.c` | The fair benchmark: identical lean loops on every chip (`-DDENSE_ONLY` build for Berkeley's) |
-| `fair-logs/`, `berkeley-logs/` | Its results on our 2:4 and 4:8 chips and on Berkeley's unmodified chip |
-| `verify_all.py` | **One command that re-checks everything** and writes `verify_all_report.md` |
+| `verify_all.py` | One command that re-checks the recorded results (needs results; see above) |
 | `compare_runs.py` | Compares a new run folder with the recorded results, number for number |
 | `nmdata.py` | Shared loader that reads every number straight from the logs |
-| `cross_check.py` | Original logs ↔ CSVs ↔ re-run (`rerun-logs/`) ↔ quoted numbers |
+| `cross_check.py` | Cross-checks logs, CSVs, re-runs and quoted numbers |
 | `independent_math_check.py` | Sparse math vs. normal math in numpy, with fault injection |
-| `pattern_fidelity.py` | How much of the weights 2:4, 4:8, and NVIDIA's paired 4:8 each keep |
-| `paper_data.py` | The paper's numbers (`paper_data.json`) and chart (`paper_chart.png`) |
-| `MANIFEST.sha256` | Checksums of all logs, results, and test programs (checked by `verify_all.py`) |
-| `bin/` | The compiled test programs that produced the results |
+| `pattern_fidelity.py` | How much of the weight energy 2:4, 4:8, and NVIDIA's paired 4:8 each keep (synthetic weights) |
+| `paper_data.py` | Builds the paper's numbers and chart from the results |
+| `bin/` | Compiled builds of the fair benchmark and the Berkeley dense benchmark |
 | `run_fair.sh`, `run_berkeley.sh`, `rerun.sh` | The original one-off launch scripts (superseded by `run-flow.sh`) |
